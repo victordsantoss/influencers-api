@@ -1,0 +1,27 @@
+{
+  "name": "influencers-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "repository": "git@github.com:victordsantoss/influencers-api.git",
+  "author": "Victor Samuel dos Santos Lucas <victor.samuelsantoss@gmail.com>",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "prettify": "prettier --write src",
+    "migration": "npx sequelize-cli db:migrate",
+    "undo": "npx sequelize-cli db:migrate:undo" 
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.11.1",
+    "sequelize": "^6.32.1",
+    "sequelize-cli": "^6.6.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  }
+}
