@@ -7,7 +7,9 @@
   "author": "Victor Samuel dos Santos Lucas <victor.samuelsantoss@gmail.com>",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "prettify": "prettier --write src"
+    "prettify": "prettier --write src",
+    "migration": "npx sequelize-cli db:migrate",
+    "undo": "npx sequelize-cli db:migrate:undo" 
   },
   "license": "MIT",
   "dependencies": {
