@@ -1,8 +1,8 @@
 import express from 'express';
-import InfluencerRoutes from './influencers.routes.js';
+import userRoutes from './user.routes.js';
 
 const applicationRoutes = express.Router();
 
-applicationRoutes.use('/influencers', InfluencerRoutes);
+applicationRoutes.use('/users', userRoutes);
 
 export default applicationRoutes;

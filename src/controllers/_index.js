@@ -1,8 +1,8 @@
-import { InfluencerController } from './influencers.controllers.js';
-const influencerController = new InfluencerController();
+import { UserController } from './user.controllers.js';
+const userController = new UserController();
 
 const controllers = {
-  influencerController,
+  userController,
 };
 
 export default controllers;
