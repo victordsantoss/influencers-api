@@ -11,6 +11,10 @@ class UserModel extends Model {
           autoIncrement: true,
           allownull: false,
         },
+        uid: {
+          type: DataTypes.STRING,
+          allownull: true,
+        },
         cpf: {
           type: DataTypes.STRING,
           allownull: false,

@@ -10,6 +10,10 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
+      uid: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       cpf: {
         type: Sequelize.STRING(11),
         allowNull: false,
