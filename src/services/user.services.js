@@ -5,6 +5,10 @@ class UserService {
   async findAll() {
     return this.user.findAll();
   }
+
+  async createUser(data) {
+    return this.user.create(data);
+  }
 }
 
 export default UserService;
