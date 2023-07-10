@@ -6,6 +6,10 @@ class UserService {
     return this.user.findAll();
   }
 
+  async findByEmail(email) {
+    return this.user.findOne({ where: { email } });
+  }
+
   async createUser(data) {
     return this.user.create(data);
   }
