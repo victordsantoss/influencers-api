@@ -1,5 +1,4 @@
 import { Model, DataTypes, Sequelize } from 'sequelize';
-import sequelizeConfig from '../config/sequelize.js';
 
 class UserModel extends Model {
   static init(sequelize) {
@@ -51,7 +50,10 @@ class UserModel extends Model {
         tableName: 'user',
       },
     );
+    return this;
+  }
+  static associate(models) {
+    this.hasMany(models.ChanelModel, { foreignKey: 'userId', as: 'chanel' });
   }
 }
-UserModel.init(sequelizeConfig, Sequelize.DataTypes);
 export default UserModel;

@@ -1,17 +1,15 @@
 import express from 'express';
 import 'dotenv/config';
 import bodyParser from 'body-parser';
-import cors from "cors";
+import cors from 'cors';
 import sequelizeConfig from './config/sequelize.js';
 import applicationRoutes from './routes/_index.js';
 
-
 const app = express();
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 const port = process.env.API_PORT;
-
 
 app.use(`/`, applicationRoutes);
 

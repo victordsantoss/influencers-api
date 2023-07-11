@@ -7,5 +7,4 @@ userRoutes.get(`/`, controllers.userController.index);
 userRoutes.get(`/user/:email`, controllers.userController.showUserByEmail);
 userRoutes.post(`/create_user`, controllers.userController.createUser);
 
-
 export default userRoutes;
