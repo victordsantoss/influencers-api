@@ -26,6 +26,22 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      instagram: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      twitter: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      facebook: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      linkedin: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       phone: {
         type: Sequelize.STRING,
         allowNull: false,

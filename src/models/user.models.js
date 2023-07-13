@@ -26,6 +26,22 @@ class UserModel extends Model {
           type: DataTypes.STRING,
           allownull: false,
         },
+        instagram: {
+          type: DataTypes.STRING,
+          allownull: false,
+        },
+        facebook: {
+          type: DataTypes.STRING,
+          allownull: false,
+        },
+        twitter: {
+          type: DataTypes.STRING,
+          allownull: false,
+        },
+        linkedin: {
+          type: DataTypes.STRING,
+          allownull: false,
+        },
         phone: {
           type: DataTypes.STRING,
           allownull: false,

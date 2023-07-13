@@ -2,6 +2,7 @@ import services from '../services/_index.js';
 export class UserController {
   constructor() {
     this.userService = services.userService;
+    this.chanelService = services.chanelService;
   }
 
   index = async (req, res) => {
@@ -72,6 +73,35 @@ export class UserController {
       return res.status(500).json({
         data: null,
         message: 'Erro na criação de usuário.',
+        type: 'error',
+      });
+    }
+  };
+
+  updateUser = async (req, res) => {
+    try {
+      const { user_id } = req.params
+      const userUpdated = await this.userService.updateUser(req.body.userData, user_id);
+      const chanelUpdated = await this.chanelService.updateChanel(req.body.chanelData, user_id);
+      if (userUpdated.dataValues && chanelUpdated.dataValues) {
+        return res.status(200).json({
+          data: userUpdated,
+          message: 'Usuário atualizado com sucesso!',
+          type: 'success',
+        });
+      } else {
+        return res.status(404).json({
+          data: userUpdated,
+          message: 'Usuário não atualizado',
+          type: 'error',
+        });
+      }
+
+    } catch (error) {
+      console.info(`error: ${error}`);
+      return res.status(500).json({
+        data: null,
+        message: 'Erro na atualização de usuário.',
         type: 'error',
       });
     }
