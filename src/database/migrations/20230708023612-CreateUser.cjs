@@ -10,6 +10,10 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
+      uid: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       cpf: {
         type: Sequelize.STRING(11),
         allowNull: false,
@@ -21,6 +25,22 @@ module.exports = {
       email: {
         type: Sequelize.STRING,
         allowNull: false,
+      },
+      instagram: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      twitter: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      facebook: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      linkedin: {
+        type: Sequelize.STRING,
+        allowNull: true,
       },
       phone: {
         type: Sequelize.STRING,

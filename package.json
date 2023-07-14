@@ -6,13 +6,14 @@
   "repository": "git@github.com:victordsantoss/influencers-api.git",
   "author": "Victor Samuel dos Santos Lucas <victor.samuelsantoss@gmail.com>",
   "scripts": {
-    "dev": "nodemon src/server.js",
+    "start": "node index.js",
     "prettify": "prettier --write src",
     "migration": "npx sequelize-cli db:migrate",
-    "undo": "npx sequelize-cli db:migrate:undo" 
+    "undo": "npx sequelize-cli db:migrate:undo"
   },
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",

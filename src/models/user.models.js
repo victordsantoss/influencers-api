@@ -1,5 +1,4 @@
 import { Model, DataTypes, Sequelize } from 'sequelize';
-import sequelizeConfig from '../config/sequelize.js';
 
 class UserModel extends Model {
   static init(sequelize) {
@@ -11,6 +10,10 @@ class UserModel extends Model {
           autoIncrement: true,
           allownull: false,
         },
+        uid: {
+          type: DataTypes.STRING,
+          allownull: true,
+        },
         cpf: {
           type: DataTypes.STRING,
           allownull: false,
@@ -20,6 +23,22 @@ class UserModel extends Model {
           allownull: false,
         },
         email: {
+          type: DataTypes.STRING,
+          allownull: false,
+        },
+        instagram: {
+          type: DataTypes.STRING,
+          allownull: false,
+        },
+        facebook: {
+          type: DataTypes.STRING,
+          allownull: false,
+        },
+        twitter: {
+          type: DataTypes.STRING,
+          allownull: false,
+        },
+        linkedin: {
           type: DataTypes.STRING,
           allownull: false,
         },
@@ -41,25 +60,16 @@ class UserModel extends Model {
           allowNull: false,
           defaultValue: 'active',
         },
-        createdAt: {
-          type: Sequelize.DATE,
-          allowNull: false,
-          defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-        },
-        updatedAt: {
-          type: Sequelize.DATE,
-          allowNull: false,
-          defaultValue: Sequelize.literal(
-            'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
-          ),
-        },
       },
       {
         sequelize,
         tableName: 'user',
       },
     );
+    return this;
+  }
+  static associate(models) {
+    this.hasMany(models.ChanelModel, { foreignKey: 'userId', as: 'chanel' });
   }
 }
-UserModel.init(sequelizeConfig, Sequelize.DataTypes);
 export default UserModel;
