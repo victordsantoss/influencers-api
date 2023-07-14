@@ -6,7 +6,7 @@
   "repository": "git@github.com:victordsantoss/influencers-api.git",
   "author": "Victor Samuel dos Santos Lucas <victor.samuelsantoss@gmail.com>",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "start": "nodemon src/index.js",
     "prettify": "prettier --write src",
     "migration": "npx sequelize-cli db:migrate",
     "undo": "npx sequelize-cli db:migrate:undo"
